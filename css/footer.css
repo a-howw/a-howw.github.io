@@ -35,9 +35,10 @@ footer .group {
 
 footer .title {
     margin: 0;
-    margin-bottom: 8px;
+    margin-bottom: 1.3em;
 }
 
 footer .item {
     display: block;
+    margin: 0.8em 0;
 }
