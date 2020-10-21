@@ -7,13 +7,13 @@ title: Hexo
 subtitle: ''
 description: ''
 keywords:
-author: A-how 阿皓
+author: A-How 阿皓
 language: en
 timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://ar-how.github.io
+url: http://a-howw.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -100,6 +100,6 @@ theme: cupertino
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/a-hoWw/a-howw.github.io.git
+  repo: https://github.com/a-howw/a-howw.github.io.git
   branch: gh-pages
   message: ""
