@@ -100,6 +100,6 @@ theme: cupertino
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/ar-how/ar-how.github.io.git
+  repo: https://github.com/a-hoWw/a-howw.github.io.git
   branch: gh-pages
   message: ""
