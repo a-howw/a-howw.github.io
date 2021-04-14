@@ -45,12 +45,11 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
+  hljs: true
   enable: true
-  line_number: true
-  auto_detect: false
+  line_number: false
+  auto_detect: true
   tab_replace: ''
-  wrap: true
-  hljs: false
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -94,7 +93,7 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 ## Themes: https://github.com/MrWillCom/hexo-theme-cupertino
-theme: cupertino
+theme: paper
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
