@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"><meta name="description" content=" [ A-How Front-End Note ] "><meta name="theme-color" content="#ebc65a"><title> [ A-How Front-End Note ] </title><style>@font-face {
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"><meta name="description" content="React Library 網頁浮水印 （浮水印文字可換行） [ A-How Front-End Note ] "><meta name="theme-color" content="#ebc65a"><title>React Library 網頁浮水印 （浮水印文字可換行） [ A-How Front-End Note ] </title><style>@font-face {
   font-family: 'Abril Fatface';
   font-style: normal;
   font-weight: 400;
@@ -15,4 +15,143 @@
 </style><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css"><script src="https://cdn.bootcss.com/highlight.js/9.6.0/highlight.min.js" defer></script><script src="/js/paper.js" defer></script><script src="https://www.googletagmanager.com/gtag/js?id=xx-xxxxxxx-xx" async></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'xx-xxxxxxx-xx');</script><link rel="preload" href="https://cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css"><link rel="preload" href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;display=swap"><meta name="generator" content="Hexo 4.2.1"></head><body><div class="mask-border"></div><div class="head"><div class="head__inner"><h1><a href="/">A-How Front-End Note</a></h1><p></p></div></div><div class="paper-container"><div class="page"><div class="location-bar"><div class="line-1"><div class="horizontal-line" style="height: 3px"></div></div><div class="line-2"><div class="horizontal-line" style="height: 1px"></div></div><p class="text">projects</p><div class="switch-button"><input class="container_toggle" type="checkbox" id="switch" name="mode"><label for="switch">Toggle</label></div><div class="line-3"><div class="horizontal-line" style="height: 1px"></div></div></div><div class="main__2-col"><article class="post-view__article"><div class="article__content"></div></article><div class="post-view__sidebar"><div class="sidebar"><div class="tocbot"><h2>Toc</h2><div class="toc__content"></div></div><h2>Links</h2><div class="sidebar__link"><ul><li><a href="https://github.com/a-howw" target="_blank" rel="noopener">Github</a></li><li><a href="https://codepen.io/a_how" target="_blank" rel="noopener">Codepen</a></li><li><a href="mailto:aiaucj8@gmail.com">Mail</a></li></ul></div><h2>Archives</h2><div class="sidebar__archives"><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a></li></ul></div><h2>Categories</h2><div class="sidebar__categories"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Library-%E5%88%86%E4%BA%AB/">Library 分享</a></li></ul></div><h2>Tags</h2><div class="sidebar__tags"><ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Library/" rel="tag">Library</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/" rel="tag">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E4%BA%AB/" rel="tag">分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C/" rel="tag">工作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%AE%E6%B0%B4%E5%8D%B0/" rel="tag">浮水印</a></li></ul></div></div></div></div></div></div><div class="footer"><span>©️2019-2021 Designed By&nbsp;<strong><a href="https://github.com/random-yang" target="_blank" rel="noopener">RandomYang</a></strong> Powered By&nbsp;</span><strong><a href="https://hexo.io" target="_blank" rel="noopener">hexo</a></strong></div><div class="darkmode-mask" id="darkmode-mask"></div><div class="sidebar__button"></div></body></html>
+gtag('config', 'xx-xxxxxxx-xx');</script><link rel="stylesheet" href="/css/tocbot.css"><script src="/js/tocbot.js" defer></script><script>window.addEventListener('DOMContentLoaded', () => {
+  tocbot.init({
+    // Where to render the table of contents.
+    tocSelector: '.toc__content',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: '.article__content',
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    // For headings inside relative or absolute positioned containers within content.
+    hasInnerContainers: true,
+    orderedList: false,
+    collapseDepth: 2,
+  });
+})</script><link rel="preload" href="https://cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css"><link rel="preload" href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;display=swap"><meta name="generator" content="Hexo 4.2.1"></head><body><div class="mask-border"></div><div class="head"><div class="head__inner"><h1><a href="/">A-How Front-End Note</a></h1><p></p></div></div><div class="paper-container"><div class="main"><div class="location-bar"><div class="line-1"><div class="horizontal-line" style="height: 3px"></div></div><div class="line-2"><div class="horizontal-line" style="height: 1px"></div></div><p class="text">React Library 網頁浮水印 （浮水印文字可換行）</p><div class="switch-button"><input class="container_toggle" type="checkbox" id="switch" name="mode"><label for="switch">Toggle</label></div><div class="line-3"><div class="horizontal-line" style="height: 1px"></div></div></div><div class="main__2-col"><article class="post-view__article"><div class="article__infomation"><div class="posts-item"><h2 class="posts-item__title"><a href="">React Library 網頁浮水印 （浮水印文字可換行）</a></h2><span class="post__date">2021-04-14</span><a href="/tags/React/"><span class="post__tags">#React</span></a><a href="/tags/%E6%B5%AE%E6%B0%B4%E5%8D%B0/"><span class="post__tags">#浮水印</span></a><a href="/tags/%E5%B7%A5%E4%BD%9C/"><span class="post__tags">#工作</span></a><a href="/tags/%E5%88%86%E4%BA%AB/"><span class="post__tags">#分享</span></a><a href="/tags/Library/"><span class="post__tags">#Library</span></a></div></div><div class="article__content"><blockquote>
+<p>最近工作上出現了一個需求：在整個網頁加上文字浮水印<br>沒錯，不是在圖片上加浮水印，是<strong>整個網頁</strong></p>
+</blockquote>
+<p><img src="https://github.com/saucxs/watermark-dom/raw/master/examples/img/demo.png" alt="saucxs/watermark-dom"><br>圖源：<a href="https://github.com/saucxs/watermark-dom" target="_blank" rel="noopener">saucxs/watermark-dom</a></p>
+<hr>
+<br>
+
+<h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>找了一堆浮水印的 Library，但大多都有個問題——<strong>文字浮水印沒辦法換行</strong>，<br>找半天終於找到可以換行的救星：<strong><a href="https://www.npmjs.com/package/@pansy/watermark" target="_blank" rel="noopener">@pansy/watermark</a></strong><br><img src="/2021/04/14/Library%20%E5%88%86%E4%BA%AB/React%20Library%20%E7%B6%B2%E9%A0%81%E6%B5%AE%E6%B0%B4%E5%8D%B0%20%EF%BC%88%E6%B5%AE%E6%B0%B4%E5%8D%B0%E6%96%87%E5%AD%97%E5%8F%AF%E6%8F%9B%E8%A1%8C%EF%BC%89/pansy_watermark.png" alt="@pansy/watermark" title="@pansy/watermark"></p>
+<h1 id="API"><a href="#API" class="headerlink" title="API"></a>API</h1><p>API 只有兩個：</p>
+<ul>
+<li><code>update(options);</code> 修改浮水印 options</li>
+<li><code>render();</code> 渲染浮水印</li>
+</ul>
+<p>所以只要兩行就解決煩惱：</p>
+<figure class="highlight less"><table><tr><td class="code"><pre><code class="hljs less"><span class="hljs-comment">// options 值為版本 1.2.0 之預設值</span><br><span class="hljs-selector-tag">update</span>(&#123;<br>  <span class="hljs-attribute">mode</span>: <span class="hljs-string">'repeat'</span>,<br>  <span class="hljs-attribute">monitor</span>: true,<br>  <span class="hljs-attribute">container</span>: <span class="hljs-string">'body'</span>,<br>  <span class="hljs-attribute">text</span>: [<span class="hljs-string">'text1'</span>,<span class="hljs-string">'text2'</span>,<span class="hljs-string">'text3'</span>],<br>  <span class="hljs-attribute">zIndex</span>: <span class="hljs-number">9999</span>,<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">160</span>,<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">80</span>,<br>  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.2</span>,<br>  <span class="hljs-attribute">rotate</span>: <span class="hljs-number">20</span>,<br>  <span class="hljs-attribute">fontSize</span>: <span class="hljs-number">14</span>,<br>  <span class="hljs-attribute">fontWeight</span>: <span class="hljs-string">'normal'</span>,<br>  <span class="hljs-attribute">fontColor</span>: <span class="hljs-number">#727071</span>,<br>  <span class="hljs-attribute">fontFamily</span>: <span class="hljs-string">'sans-serif'</span>,<br>  <span class="hljs-attribute">textAlign</span>: <span class="hljs-string">'center'</span>,<br>&#125;);<br><span class="hljs-selector-tag">render</span>();<br></code></pre></td></tr></table></figure>
+
+<h2 id="浮水印設定參數"><a href="#浮水印設定參數" class="headerlink" title="浮水印設定參數"></a>浮水印設定參數</h2><table>
+<thead>
+<tr>
+<th align="center">參數</th>
+<th align="center">說明</th>
+<th align="center">類型</th>
+<th align="center">預設值</th>
+<th align="center">版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">mode</td>
+<td align="center">浮水印是重複排列還是間隔排列</td>
+<td align="center">repeat | interval</td>
+<td align="center"><code>repeat</code></td>
+<td align="center">1.2.0</td>
+</tr>
+<tr>
+<td align="center">monitor</td>
+<td align="center">監聽浮水印元素是否被篡改、被修改或者删除等操作，則重新渲染水印</td>
+<td align="center">boolean</td>
+<td align="center"><code>true</code></td>
+<td align="center">–</td>
+</tr>
+<tr>
+<td align="center">container</td>
+<td align="center">浮水印掛載的容器</td>
+<td align="center">HTMLElement | sting</td>
+<td align="center"><code>body</code></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">text</td>
+<td align="center">浮水印文本</td>
+<td align="center">string | string[]</td>
+<td align="center">–</td>
+<td align="center">–</td>
+</tr>
+<tr>
+<td align="center">zIndex</td>
+<td align="center">浮水印層級</td>
+<td align="center">number</td>
+<td align="center"><code>9999</code></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">width</td>
+<td align="center">單個浮水印區域寬度</td>
+<td align="center">number</td>
+<td align="center"><code>160</code></td>
+<td align="center">–</td>
+</tr>
+<tr>
+<td align="center">height</td>
+<td align="center">單個浮水印區域高度</td>
+<td align="center">number</td>
+<td align="center"><code>80</code></td>
+<td align="center">–</td>
+</tr>
+<tr>
+<td align="center">opacity</td>
+<td align="center">透明度</td>
+<td align="center">number</td>
+<td align="center"><code>0.2</code></td>
+<td align="center">–</td>
+</tr>
+<tr>
+<td align="center">rotate</td>
+<td align="center">旋轉的角度</td>
+<td align="center">number</td>
+<td align="center"><code>20</code></td>
+<td align="center">–</td>
+</tr>
+<tr>
+<td align="center">fontSize</td>
+<td align="center">字體大小</td>
+<td align="center">number</td>
+<td align="center"><code>14</code></td>
+<td align="center">–</td>
+</tr>
+<tr>
+<td align="center">fontWeight</td>
+<td align="center">字體粗细</td>
+<td align="center">–</td>
+<td align="center"><code>normal</code></td>
+<td align="center">–</td>
+</tr>
+<tr>
+<td align="center">fontColor</td>
+<td align="center">字體顏色</td>
+<td align="center">string</td>
+<td align="center"><code>#727071</code></td>
+<td align="center">–</td>
+</tr>
+<tr>
+<td align="center">fontFamily</td>
+<td align="center">字體設定</td>
+<td align="center">string</td>
+<td align="center"><code>sans-serif</code></td>
+<td align="center">–</td>
+</tr>
+<tr>
+<td align="center">textAlign</td>
+<td align="center">文本對齊設定</td>
+<td align="center">string</td>
+<td align="center"><code>center</code></td>
+<td align="center">–</td>
+</tr>
+</tbody></table>
+<h1 id="Library-連結"><a href="#Library-連結" class="headerlink" title="Library 連結"></a>Library 連結</h1><p>package: <a href="https://www.npmjs.com/package/@pansy/watermark" target="_blank" rel="noopener">@pansy/watermark</a><br>demo: <a href="https://react-components-vert.vercel.app/components/basic/watermark" target="_blank" rel="noopener">@pansy/watermark Demo</a></p>
+</div></article><div class="post-view__sidebar"><div class="sidebar"><div class="tocbot"><h2>Toc</h2><div class="toc__content"></div></div><h2>Links</h2><div class="sidebar__link"><ul><li><a href="https://github.com/a-howw" target="_blank" rel="noopener">Github</a></li><li><a href="https://codepen.io/a_how" target="_blank" rel="noopener">Codepen</a></li><li><a href="mailto:aiaucj8@gmail.com">Mail</a></li></ul></div><h2>Archives</h2><div class="sidebar__archives"><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a></li></ul></div><h2>Categories</h2><div class="sidebar__categories"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Library-%E5%88%86%E4%BA%AB/">Library 分享</a></li></ul></div><h2>Tags</h2><div class="sidebar__tags"><ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Library/" rel="tag">Library</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/" rel="tag">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E4%BA%AB/" rel="tag">分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C/" rel="tag">工作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%AE%E6%B0%B4%E5%8D%B0/" rel="tag">浮水印</a></li></ul></div></div></div></div><div class="horizontal-line" style="height: 1px"></div><div class="main__bottom"><div class="pre-next"><a class="pre-button">没有更多</a><a class="next-button" href="/2020/05/12/%E3%80%8C%E7%9C%9F%EF%BC%8E%E8%8F%9C%E9%B3%A5%E3%80%8D%E8%BD%89%E8%81%B7%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB%EF%BD%9C%E9%9D%A2%E8%A9%A6%E7%B4%80%E9%8C%84%20copy/">「真．菜鳥」轉職前端工程師｜面試紀錄</a></div></div></div></div><div class="footer"><span>©️2019-2021 Designed By&nbsp;<strong><a href="https://github.com/random-yang" target="_blank" rel="noopener">RandomYang</a></strong> Powered By&nbsp;</span><strong><a href="https://hexo.io" target="_blank" rel="noopener">hexo</a></strong></div><div class="darkmode-mask" id="darkmode-mask"></div><div class="sidebar__button"></div></body></html>
