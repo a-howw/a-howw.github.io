@@ -14,7 +14,8 @@ photos:
 ---
 
 > 最近工作上出現了一個需求：在整個網頁加上文字浮水印
-沒錯，不是在圖片上加浮水印，是__整個網頁__
+沒錯，不是在圖片上加浮水印，是整個網頁⋯
+<!-- more -->
 
 ![saucxs/watermark-dom](https://github.com/saucxs/watermark-dom/raw/master/examples/img/demo.png)
 圖源：[saucxs/watermark-dom](https://github.com/saucxs/watermark-dom)
@@ -34,7 +35,7 @@ API 只有兩個：
 - `render();` 渲染浮水印
 
 所以只要兩行就解決煩惱：
-```
+{% codeblock lang:js %}
 // options 值為版本 1.2.0 之預設值
 update({
   mode: 'repeat',
@@ -48,12 +49,12 @@ update({
   rotate: 20,
   fontSize: 14,
   fontWeight: 'normal',
-  fontColor: #727071,
+  fontColor: '#727071',
   fontFamily: 'sans-serif',
   textAlign: 'center',
 });
 render();
-```
+{% endcodeblock %}
 
 ## 浮水印設定參數
 |    參數    |                              說明                              |         類型         |   預設值   |  版本 |
