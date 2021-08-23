@@ -11,6 +11,7 @@ photos:
 
 > **Cascading referential integrity constraint**
 **用來定義使用者 UPDATE 或是 DELETE「FK」時的動作**
+<!-- more -->
 
 
 有以下四種選項
