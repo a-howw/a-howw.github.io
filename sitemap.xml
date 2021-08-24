@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://a-howw.github.io/2021/08/24/SQL%20%E7%AD%86%E8%A8%98/%E3%80%90SQL%E3%80%91Indexed%20views/</loc>
+    
+    <lastmod>2021-08-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://a-howw.github.io/2021/08/23/SQL%20%E7%AD%86%E8%A8%98/%E3%80%90SQL%E3%80%91Cascading%20referential%20integrity%20constraint/</loc>
     
     <lastmod>2021-08-24</lastmod>
