@@ -1,5 +1,5 @@
 ---
-layout: react
+layout:
 title: React Library 網頁浮水印 （浮水印文字可換行）
 date: 2021-04-14 21:32:43
 categories: Library 分享
