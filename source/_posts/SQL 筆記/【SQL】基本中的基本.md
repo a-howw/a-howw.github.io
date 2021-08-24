@@ -52,6 +52,18 @@ e.g. `WHERE`、`AND`、`OR`、`LIKE`、`ORDER BY`、`GROUP BY`⋯etc.
 
 - **Functions**
 SQL 內建函數
+
+### SQL Functions
+主要有三大類內建函數：
+
+- **Aggregate Functions**
+e.g. `AVG()`、`COUNT()`、`MAX()`、`MIN()`、`SUM()`...etc.
+
+- **String Functions**
+e.g. `ASCII()`、`CHAR()`、`CONCAT()`、`LENGTH()`、`REPLACE()`、`UCASE()`、`LCASE()`、`MID()`...etc.
+
+- **Mathematical Functions**
+e.g.  `ABS()`、`CEILING()`、`FLOOR()`、`POWER()`、`SQRT()`、`LOG()`...etc.
 <br />
 <br />
 
