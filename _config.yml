@@ -5,7 +5,7 @@
 # Site
 title: A-How's BLOG
 subtitle: ''
-description: ''
+description: '記錄一些筆記'
 keywords:
 author: A-How 阿皓
 language: en
@@ -103,6 +103,8 @@ deploy:
   branch: gh-pages
   message: ""
 
+# Sitemap
+## hexo-generator-sitemap: https://github.com/hexojs/hexo-generator-sitemap
 sitemap:
   path: sitemap.xml
   template: ./sitemap_template.xml
