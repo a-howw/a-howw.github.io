@@ -1,6 +1,6 @@
 ---
 layout:
-title: 【MSSQL】Cascading referential integrity constraint
+title: 【SQL】Cascading referential integrity constraint
 date: 2021-08-23 20:50:35
 categories: SQL 筆記
 tags:
