@@ -10,9 +10,6 @@ photos:
 ---
 
 
-# 用途
-#### 提升效能
-
 當 view 加入 index 則能夠儲存 data，
 執行`SELECT`時不需要再去 base table 取得資料，
 若 base table 有進行 transaction 且 commit 時，view 也會跟著重新計算且更新
@@ -24,8 +21,11 @@ photos:
 #### 注意
 > _If GROUP BY is specified, the view select list must contain a `COUNT_BIG(*)` expression, and the view definition cannot specify `HAVING`, `ROLLUP`, `CUBE`, or `GROUPING SETS`._
 
+# 用途
+**提升效能**
+
 # 使用時機
-#### index view 適合使用在 base table data 不會時常改變的時候
+**index view 適合使用在 base table data 不會時常改變的時候**
 
 **維護 index view 的成本會高於 table index，
 所以 index view 通常使用於 data warehousing**
