@@ -21,7 +21,7 @@ photos:
 ---
 
 # Scalar functions
-回傳一個 value，且該 value 為 scalar data type，不能回傳 text、ntext、image、cursor、timestamp 型別
+回傳一個 value，且該 value 為 scalar datatype，不能回傳 text、ntext、image、cursor、timestamp 型別
 SP 和 scalar functions 差在 SP 不能使用於`SELECT`或`WHERE` clause
 
 > _To view the text of the function use `sp_helptext` FunctionName_
@@ -36,6 +36,9 @@ BEGIN
     RETURN Return_Datatype
 END
 ```
+
+#### 參考連結
+- [Scalar Datatype](https://link.springer.com/content/pdf/bbm:978-1-4302-3696-2/1.pdf)
 <br />
 <br />
 
