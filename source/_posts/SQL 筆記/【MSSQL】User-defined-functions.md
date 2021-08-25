@@ -10,9 +10,9 @@ tags:
 photos:
 ---
 
-- [Scalar functions](#Scalar-functions)
-- [Inline table-valued functions](#Inline-table-valued-functions)
-- [Multistatement table-valued functions](#Multistatement-table-valued-functions)
+- Scalar functions
+- Inline table-valued functions
+- Multistatement table-valued functions
 <!-- more -->
 
 <br />
