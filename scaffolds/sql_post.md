@@ -2,7 +2,7 @@
 layout:
 title: {{ title }}
 date: {{ date }}
-categories:
+categories: SQL 筆記
 tags:
 - SQL
 - 筆記
