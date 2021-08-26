@@ -6,7 +6,7 @@ tags:
 date: 2021-08-25 23:34:03
 draft_date: 2021-08-25 17:48:38
 layout:
-categories:
+categories: SQL 筆記
 photos:
 ---
 
