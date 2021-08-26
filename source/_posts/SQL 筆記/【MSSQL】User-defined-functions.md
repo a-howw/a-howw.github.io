@@ -3,7 +3,7 @@ title: 【MSSQL】User-defined functions (UDF)
 date: 2021-08-25 16:54:35
 draft_date: 2021-08-25 11:18:06
 layout:
-categories:
+categories: SQL 筆記
 tags:
 - SQL
 - 筆記
