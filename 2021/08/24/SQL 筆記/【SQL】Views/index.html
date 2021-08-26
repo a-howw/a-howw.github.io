@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"><meta name="description" content="【SQL】Indexed views [ A-How's BLOG ] "><meta name="theme-color" content="#ebc65a"><title>【SQL】Indexed views [ A-How's BLOG ] </title><style>@font-face {
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"><meta name="description" content="【SQL】Views [ A-How's BLOG ] "><meta name="theme-color" content="#ebc65a"><title>【SQL】Views [ A-How's BLOG ] </title><style>@font-face {
   font-family: 'Abril Fatface';
   font-style: normal;
   font-weight: 400;
@@ -28,18 +28,43 @@ gtag('config', 'G-5M9QR6GQ5C');</script><link rel="stylesheet" href="/css/tocbot
     orderedList: false,
     collapseDepth: 2,
   });
-})</script><link rel="preload" href="https://cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css"><link rel="preload" href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;display=swap"><meta name="generator" content="Hexo 4.2.1"></head><body><div class="mask-border"></div><div class="head"><div class="head__inner"><h1><a href="/">A-How's BLOG</a></h1><p>記錄一些筆記</p></div></div><div class="paper-container"><div class="main"><div class="location-bar"><div class="line-1"><div class="horizontal-line" style="height: 3px"></div></div><div class="line-2"><div class="horizontal-line" style="height: 1px"></div></div><p class="text">【SQL】Indexed views</p><div class="switch-button"><input class="container_toggle" type="checkbox" id="switch" name="mode"><label for="switch">Toggle</label></div><div class="line-3"><div class="horizontal-line" style="height: 1px"></div></div></div><div class="main__2-col"><article class="post-view__article"><div class="article__infomation"><div class="posts-item"><h2 class="posts-item__title"><a href="">【SQL】Indexed views</a></h2><span class="post__date">2021-08-24</span><a href="/tags/SQL/"><span class="post__tags">#SQL</span></a><a href="/tags/%E7%AD%86%E8%A8%98/"><span class="post__tags">#筆記</span></a></div></div><div class="article__content"><p>當 view 加入 index 則能夠儲存 data，<br>執行<code>SELECT</code>時不需要再去 base table 取得資料，<br>若 base table 有進行 transaction 且 commit 時，view 也會跟著重新計算且更新</p>
-<a id="more"></a>
+})</script><link rel="preload" href="https://cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css"><link rel="preload" href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;display=swap"><meta name="generator" content="Hexo 4.2.1"></head><body><div class="mask-border"></div><div class="head"><div class="head__inner"><h1><a href="/">A-How's BLOG</a></h1><p>記錄一些筆記</p></div></div><div class="paper-container"><div class="main"><div class="location-bar"><div class="line-1"><div class="horizontal-line" style="height: 3px"></div></div><div class="line-2"><div class="horizontal-line" style="height: 1px"></div></div><p class="text">【SQL】Views</p><div class="switch-button"><input class="container_toggle" type="checkbox" id="switch" name="mode"><label for="switch">Toggle</label></div><div class="line-3"><div class="horizontal-line" style="height: 1px"></div></div></div><div class="main__2-col"><article class="post-view__article"><div class="article__infomation"><div class="posts-item"><h2 class="posts-item__title"><a href="">【SQL】Views</a></h2><span class="post__date">2021-08-24</span><a href="/tags/SQL/"><span class="post__tags">#SQL</span></a><a href="/tags/%E7%AD%86%E8%A8%98/"><span class="post__tags">#筆記</span></a></div></div><div class="article__content"><p>用來<strong>儲存 SQL query</strong>，可以看作是 <strong>virtual table</strong></p>
+<ul>
+<li>Views</li>
+<li>Indexed views<a id="more"></a>
+<br>
+<br>
+
+</li>
+</ul>
+<hr>
+<h1 id="Views"><a href="#Views" class="headerlink" title="Views"></a>Views</h1><p>如果一個 view 是基於多個 tables 建立，更新該 view 時，underlying base tables 可能會無法正確更新，<br>因此為了正確更新 tables 需要使用<code>INSTEAD OF</code></p>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ul>
+<li><p>view 不能傳參數，但可以使用 inline table-valued functions 作為替代方案</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- Error : Cannot pass Parameters to Views</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">View</span> vWEmployeeDetails<br>@Gender <span class="hljs-keyword">nvarchar</span>(<span class="hljs-number">20</span>)<br><span class="hljs-keyword">AS</span><br><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">Id</span>, <span class="hljs-keyword">Name</span>, Gender, DepartmentId<br><span class="hljs-keyword">FROM</span>  tblEmployee<br><span class="hljs-keyword">WHERE</span> Gender = @Gender<br><br><span class="hljs-comment">-- Inline table-valued functions</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">FUNCTION</span> fnEmployeeDetails(@Gender <span class="hljs-keyword">nvarchar</span>(<span class="hljs-number">20</span>))<br><span class="hljs-keyword">RETURNS</span> <span class="hljs-keyword">TABLE</span><br><span class="hljs-keyword">AS</span><br><span class="hljs-keyword">RETURN</span> <br>(<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">Id</span>, <span class="hljs-keyword">Name</span>, Gender, DepartmentId<br><span class="hljs-keyword">FROM</span> tblEmployee <span class="hljs-keyword">WHERE</span> Gender = @Gender)<br><br><span class="hljs-keyword">Select</span> * <span class="hljs-keyword">from</span> dbo.fnEmployeeDetails(<span class="hljs-string">'Male'</span>)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>不能使用<code>RULES</code>和<code>DEFAULTS</code>，因為 views 本身並沒有儲存 data</p>
+</li>
+<li><p>不能使用<code>ORDER BY</code>，除非定義<code>TOP</code>或<code>FOR XML</code></p>
+</li>
+<li><p>views 不能以 temporary tables 建立</p>
+<br>
+<br>
+
+</li>
+</ul>
+<h1 id="Indexed-views"><a href="#Indexed-views" class="headerlink" title="Indexed views"></a>Indexed views</h1><p>當 view 加入 index 則能夠儲存 data，<br>執行<code>SELECT</code>時不需要再去 base table 取得資料，<br>若 base table 有進行 transaction 且 commit 時，view 也會跟著重新計算且更新</p>
+<!-- more -->
 
 <p>第一次在 view 加入 index，只能用<code>UNIQUE CLUSTERED INDEX</code>，<br>因為 view 本身並沒有儲存任何 data，所以沒辦法用<code>NON-CLUSTERED INDEX</code></p>
-<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><blockquote>
-<p><em>If GROUP BY is specified, the view select list must contain a <code>COUNT_BIG(*)</code> expression, and the view definition cannot specify <code>HAVING</code>, <code>ROLLUP</code>, <code>CUBE</code>, or <code>GROUPING SETS</code>.</em></p>
-</blockquote>
-<h1 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h1><p><strong>提升效能</strong></p>
-<h1 id="使用時機"><a href="#使用時機" class="headerlink" title="使用時機"></a>使用時機</h1><p><strong>index view 適合使用在 base table data 不會時常改變的時候</strong></p>
+<h4 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h4><p><strong>提升效能</strong></p>
+<h4 id="使用時機"><a href="#使用時機" class="headerlink" title="使用時機"></a>使用時機</h4><p><strong>index view 適合使用在 base table data 不會時常改變的時候</strong></p>
 <p><strong>維護 index view 的成本會高於 table index，<br>所以 index view 通常使用於 data warehousing</strong></p>
 <p>index view 適合 OLAP system (OnLine Analytical Processing)，<br>若是使用於 OLTP system (On-Line Transaction Processing system) 可能會影響到效能</p>
-<h1 id="參考連結"><a href="#參考連結" class="headerlink" title="參考連結"></a>參考連結</h1><ul>
+<h4 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h4><blockquote>
+<p><em>If GROUP BY is specified, the view select list must contain a <code>COUNT_BIG(*)</code> expression, and the view definition cannot specify <code>HAVING</code>, <code>ROLLUP</code>, <code>CUBE</code>, or <code>GROUPING SETS</code>.</em></p>
+</blockquote>
+<h4 id="參考連結"><a href="#參考連結" class="headerlink" title="參考連結"></a>參考連結</h4><ul>
 <li><a href="https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008-r2/ms191432(v=sql.105)?redirectedfrom=MSDN" target="_blank" rel="noopener">Creating Indexed Views</a></li>
 </ul>
 </div></article><div class="post-view__sidebar"><div class="sidebar"><div class="tocbot"><h2>Toc</h2><div class="toc__content"></div></div><h2>Links</h2><div class="sidebar__link"><ul><li><a href="mailto:aiaucj8@gmail.com">Mail</a></li></ul></div><h2>Archives</h2><div class="sidebar__archives"><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li></ul></div><h2>Categories</h2><div class="sidebar__categories"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Library-%E5%88%86%E4%BA%AB/">Library 分享</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL-%E7%AD%86%E8%A8%98/">SQL 筆記</a></li></ul></div><h2>Tags</h2><div class="sidebar__tags"><ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Library/" rel="tag">Library</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/" rel="tag">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E4%BA%AB/" rel="tag">分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%BD%9C/" rel="tag">工作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%AE%E6%B0%B4%E5%8D%B0/" rel="tag">浮水印</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AD%86%E8%A8%98/" rel="tag">筆記</a></li></ul></div></div></div></div><div class="horizontal-line" style="height: 1px"></div><div class="main__bottom"><div class="pre-next"><a class="pre-button" href="/2021/08/25/SQL%20%E7%AD%86%E8%A8%98/%E3%80%90MSSQL%E3%80%91User-defined-functions/">【MSSQL】User-defined functions (UDF)</a><a class="next-button" href="/2021/08/23/SQL%20%E7%AD%86%E8%A8%98/%E3%80%90SQL%E3%80%91%E5%9F%BA%E6%9C%AC%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC/">【SQL】基本中的基本</a></div></div></div></div><div class="footer"><span>©️2019-2021 Designed By&nbsp;<strong><a href="https://github.com/random-yang" target="_blank" rel="noopener">RandomYang</a></strong> Powered By&nbsp;</span><strong><a href="https://hexo.io" target="_blank" rel="noopener">hexo</a></strong></div><div class="darkmode-mask" id="darkmode-mask"></div><div class="sidebar__button"></div></body></html>
